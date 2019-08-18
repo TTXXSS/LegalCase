@@ -14,6 +14,16 @@ public class LegalCase {
     @NotNull
     @Column
     private Long time;
+    @OneToOne(cascade = CascadeType.ALL)
+    private CaseInformation caseInformation;
+
+    public CaseInformation getCaseInformation() {
+        return caseInformation;
+    }
+
+    public void setCaseInformation(CaseInformation caseInformation) {
+        this.caseInformation = caseInformation;
+    }
 
     public Long getId() {
         return id;
