@@ -16,6 +16,16 @@ public class LegalCase {
     private Long time;
     @OneToOne(cascade = CascadeType.ALL)
     private CaseInformation caseInformation;
+    @OneToOne(cascade = CascadeType.ALL)
+    private Procuratorate procuratorate;
+
+    public Procuratorate getProcuratorate() {
+        return procuratorate;
+    }
+
+    public void setProcuratorate(Procuratorate procuratorate) {
+        this.procuratorate = procuratorate;
+    }
 
     public CaseInformation getCaseInformation() {
         return caseInformation;
