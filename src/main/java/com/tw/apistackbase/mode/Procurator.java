@@ -2,26 +2,15 @@ package com.tw.apistackbase.mode;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import java.util.List;
 
 @Entity
-public class Procuratorate {
+public class Procurator {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @Column(unique = true ,length = 50)
+    @Column(length = 255)
     @NotNull
     private String name;
-    @OneToMany(cascade = CascadeType.ALL)
-    private List<Procurator> procurator;
-
-    public List<Procurator> getProcurator() {
-        return procurator;
-    }
-
-    public void setProcurator(List<Procurator> procurator) {
-        this.procurator = procurator;
-    }
 
     public Long getId() {
         return id;
